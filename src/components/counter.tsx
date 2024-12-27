@@ -5,9 +5,15 @@ const Counter = () => {
   const [countUpdate, setCountUpdate] = useState(count);
   console.log('count update ' + countUpdate);
 
-  useEffect(() => {
-    setCountUpdate(count); // Update the input field value when the count changes
-  }, [count]);
+  // useEffect(() => {
+  //   setCountUpdate(count); // Update the input field value when the count changes
+  // }, [count]);
+
+  // 2nd simpler way to useEffect
+  useEffect(() => setCountUpdate(count), [count]);
+
+  // simpler way to useEffect
+  // useEffect(() => {count}, [count]);
 
   return (
     <section className="flex w-2/3 flex-col items-center gap-8 border-4 border-primary-500 bg-white p-8 shadow-lg">
@@ -19,7 +25,7 @@ const Counter = () => {
         >
           ➖ Decrement
         </button>
-        <button>🔁 Reset</button>
+        <button onClick={() => setCount(0)}>🔁 Reset</button>
         <button onClick={() => setCount((prevCount) => prevCount + 1)}>
           ➕ Increment
         </button>
