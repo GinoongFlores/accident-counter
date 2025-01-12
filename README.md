@@ -1,5 +1,6 @@
 # A Simple Counter
 
+# This is a testss
 <<<<<<< HEAD
 A silly little application for Steve's Redux Toolkit Course.
 =======
